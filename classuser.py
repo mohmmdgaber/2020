@@ -15,16 +15,28 @@ class user :
          if(user.checklogin(getname(),getpassword())==0):
             print("the inputs u entered are incorrect/don't match the database")
 
+    def getnameuser(self):
+        return self.nameuser
+
+    def getpassword(self):
+        return self.password
+
 
 
 class manager(user):
-        def __init__(self,name,password):
-            self.name=name
-            self.password=password
-        def getname(self):
-            return self.name
-        def getpassword(self):
-            return  self.password
+            def __init__(self, name, password, coffeeshopname):
+                self.name = name
+                self.password = password
+                self.coffeeshopname = coffeeshopname
+
+            def getname(self):
+                return self.name
+
+            def getpassword(self):
+                return self.password
+
+            def getcoffeeshopname(self):
+                return self.coffeeshopname
 
 def getname(self):
 
@@ -32,6 +44,3 @@ def getname(self):
 def getpassword(self):
     return self.password
 
-b=manager('mose',4)
-print(b.name)
-print(b.password)
