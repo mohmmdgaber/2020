@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static',filename='styles/home.css')}}">
+
+  <body>
+
+    <div class="imgcontainer">
+       <image src ="{{url_for('.static',filename='images/image1.png')}}"class="imaget">
+      <meta charset="utf-8">
+          <title>Covid Free Coffee</title>
+
+
+
+
+    </div>
+  </head>
+
+
+   <div class="container">
+ <form action="#" method="post">
+
+     <p><b> Username:</b></p>
+     <input type="text" placeholder="Enter Username" name="uname" required>
+     <br>
+     <br>
+     <p><b>Password   :</b></p>
+     <input type="password" placeholder="Enter Password" name="psw" required>
+     <br>
+     <br>
+     <button type="submit">Login</button>
+     <br>
+     <p>{{content}}</p>
+   </div>
+ </form>
+ <style>
+ .imgcontainer{
+   height: 400px;
+   width: 400px;
+ }
+.imaget{
+  max-width: 100%;
+  max-height: 100%;
+}
+</style>
+
+
+  </body>
+</html>

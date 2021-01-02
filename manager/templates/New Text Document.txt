@@ -1,0 +1,46 @@
+
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    <div class="product">
+      <table border="1" cellspacing="0" width="600px" >
+        <caption>product:</caption>
+
+        <tr height="200px">
+          <td> <image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+        </tr>
+        <tr height= "200px">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <tr height="200px" >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr height="200px" >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+    </div>
+
+  </body>
+</html>

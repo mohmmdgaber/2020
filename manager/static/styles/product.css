@@ -1,0 +1,25 @@
+ .add-new {
+    float: right;
+height: 30px;
+font-weight: bold;
+font-size: 12px;
+text-shadow: none;
+min-width: 100px;
+border-radius: 50px;
+line-height: 13px;
+}
+ .add-new i {
+margin-right: 4px;
+}
+body {
+    color: #404E67;
+    background: LightGray;
+font-family: 'Open Sans', sans-serif;
+}
+.product{
+  width: 700px;
+  margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  }

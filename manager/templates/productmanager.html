@@ -1,0 +1,68 @@
+
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static',filename='styles/product.css')}}">
+    <title></title>
+  </head>
+
+  <body>
+    <div class="product">
+
+      <table border="1" cellspacing="0" width="600px" >
+        <caption>product:</caption>
+        <div class="col-sm-4">
+        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+        <button type="button" class="btn btn-info add-new"><i class="fa fa-remove"></i> remove</button>
+        <button type="button" class="btn btn-info add-new"><i class="fa fa-ubdate"></i> update</button>
+      </div>
+        <div class="add">
+          <h2>update:</h2>
+           <h2>product name:</h2>
+           <input type="text" placeholder="" name="productname" >
+           <h2>product quantity:</h2>
+           <input type="text" placeholder="" name="productquantity" >
+
+          <h2>product  expiringdate:</h2>
+            <input type="text" placeholder="" name="productexpiringdate" >
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+        <tr height="200px">
+          <td> <image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+          <td><image src ="{{url_for('static',filename='images/image1.png')}}" style="max-height:100% ;max-width: 100%"><br><p>name:<br><br>quantity:<br><br>expiringdate:</p></td>
+        </tr>
+        <tr height= "200px">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        <tr height="200px" >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr height="200px" >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+    </div>
+
+  </body>
+</html>

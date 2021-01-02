@@ -1,0 +1,29 @@
+
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static',filename='styles/style.css')}}">
+    <title></title>
+  </head>
+  <body>
+    <h1>workerdetals :</h1>
+    <table border="1"cellspacing="0" width="50%" name="table">
+       {%for x in range(size)%}
+         <tr height= "100px">
+           <td></td>
+         </tr>
+    </table>
+    <h1>report :</h1>
+    <br>
+    <table  border="1"cellspacing="0" width="50%">
+      {%for x in range(size)%}
+          <tr height= "100px">
+            <td></td>
+
+          </tr>
+
+    </table>
+
+  </body>
+</html>
