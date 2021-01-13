@@ -1,0 +1,61 @@
+{% extends "basepage.html" %}
+{% set active_page = "managerpage/couponss" %}
+
+
+  {% block content %}
+  <form action="#" method="post">
+
+
+    <div class="container">
+            <table border="4" width="50%" cellspacing="0" class="table table-hover">
+                <thead>
+                    <tr height="60px" >
+                        <th scope="col">copone code</th>
+                        <th scope="col">uses</th>
+                        <th scope="col">expiringdate </th>
+                        <th scope="col">total uses</th>
+                        <th scope="col">discount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for item in value %}
+                    <tr height="50px">
+                        <td>{{item.code}}</td>
+                        <td>{{item.uses}}</td>
+                        <td>{{item.expirationdate}}</td>
+                        <td>{{item.fulluses}}</td>
+                        <td>{{item.discount}} $</td>
+                        </tr>
+                      {% endfor %}
+
+                </tbody>
+            </table>
+            <h6>{{message}}</h6>
+                <div class="container">
+                    <div class="table-wrapper">
+                        <div class="table-title">
+                            <div class="row">
+                              <br>
+                                <div class="col-sm-4">
+                                    <button type="submit" name="add" value="add" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                                    <button type="submit" name="remove" value="remove" class="btn btn-info add-new"><i class="fa fa-remove"></i> remove</button>
+                                    <button type="submit" name="update" value="update" class="btn btn-info add-new"><i class="fa fa-ubdate"></i> update</button>
+                                </div>
+
+                                <div class="add">
+                                  <h3>coupon code:</h3>
+                                   <input type="text" placeholder="" name="code" >
+                                   <h3>the number of uses:</h3>
+                                   <input type="text" placeholder="" name="uses" >
+                                   <h3> the expiring date:</h3>
+                                   <input type="date"  name="expiringdate"
+                                    value="2020-07-22"
+                                     min="2020-01-01" >
+                                   <h3>the discounted amount:</h3>
+                                   <input type="text" placeholder="" name="discount">
+
+                        </table>
+                    </div>
+                </div>
+                  </form>
+            {% endblock %}

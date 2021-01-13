@@ -1,0 +1,120 @@
+{% extends "basepage.html" %}
+{% set active_page = "managerpage/workers" %}
+    {% block head %}
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="{{url_for('.static',filename='styles/worker.css')}}">
+    {% endblock %}
+
+  {% block content %}
+
+  <form action="#" method="post">
+
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
+                    <div class="col-sm-4">
+
+                        <button type="submit" name="add" value="add"class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                        <button type="submit" name="remove" value="remove" class="btn btn-info add-new"><i class="fa fa-remove"></i> remove</button>
+                        <button type="submit" name="update" value="update"class="btn btn-info add-new"><i class="fa fa-ubdate"></i> update</button>
+
+                         </div>
+
+                             </div>
+                                   </div>
+           <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Worker name</th>
+                        <th>Worker password</th>
+                        <th>Worker hours</th>
+                        <th>worker days</th>
+                        <th>worker tips</th>
+
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <div class="add">
+                       <h2>worker name:</h2>
+                       <input type="text" placeholder="" name="workername" >
+                       <h2>worker password:</h2>
+                       <input type="password" placeholder="" name="workerpassword" >
+                       <h2>working hours:</h2>
+                       <p>
+                         from:
+                       <select id="starthour" name="starthour">
+                         {% for i in range(0,24) %}
+                           <option value="{{i}}">{{i}}:00</option>
+                           {% endfor %}
+
+                      </select>
+
+                        to:
+                      <select id="endhour" name="endhour">
+                        {% for i in range(0,24) %}
+                          <option value="{{i}}">{{i}}:00</option>
+                          {% endfor %}
+
+                     </select>
+                     </p>
+                     </form>
+
+                      <h2>working days:</h2>
+                      <p>
+                        from:
+                      <select id="startday" name="startday">
+                        {% for i in days %}
+                          <option value="{{loop.index-1}}">{{i}}</option>
+                          {% endfor %}
+
+                     </select>
+
+                       to:
+                     <select id="endday" name="endday">
+                       {% for i in days %}
+                         <option value="{{loop.index-1}}">{{i}}</option>
+                         {% endfor %}
+
+
+                    </select>
+                    </p>
+                      <h10>  {{message}}</h10>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        {% for item in value %}
+
+                          <tr>
+                              <td>{{item.name}}</td>
+                              <td>{{item.password}}</td>
+                              <td>{{item.starthour}}:00-{{item.endhour}}:00</td>
+                              <td> {{days[item.startday]}} to {{days[item.endday]}} </td>
+                              <th>{{item.tips}} $</th>
+
+
+                          </tr>
+                            {% endfor %}
+                          <tr height="20px">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+
+                          </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}

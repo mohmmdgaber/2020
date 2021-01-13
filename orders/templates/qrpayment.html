@@ -1,0 +1,22 @@
+{% extends "indexx.html" %}
+{% block content %}
+<h1>Scan this code for payment:</h1>
+<br>
+<form class="" action="#" method="post">
+
+
+<img src="{{ qrcode(see, border=10,box_size=6, fill_color='red',error_correction='H',icon_img="https://i.pinimg.com/originals/f3/80/5c/f3805cbb9c45c2ad8e12fea81af79f29.png") }}">
+<div class="container-contact100-form-btn">
+  <div class="wrap-contact100-form-btn">
+    <div class="contact100-form-bgbtn"></div>
+    <button type="submit" name="submitt" value="submitt" class="contact100-form-btn">
+      <span>
+        Validate
+        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+
+      </span>
+    </button>
+  </div>
+</div>
+</form>
+{% endblock %}

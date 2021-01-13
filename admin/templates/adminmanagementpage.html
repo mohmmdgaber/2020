@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('.static',filename='style.css')}}">
+    <title></title>
+  </head>
+  <body>
+  <br>
+<div class="list">
+  <table border="1" cellspacing="0" width="100px" >
+    <caption>list:</caption>
+
+    <tr>
+     <th>managername</th>
+     <th>password</th>
+     <th>coffeeshopname</th>
+     <th>is the store open?</th>
+     <th>bitcoin address</th>
+
+
+    </tr>
+  {% block content %}
+    {% for item in value %}
+    <tr height= "50px">
+     <td>{{item.name}}</td>
+     <td>{{item.password}}</td>
+     <td>{{item.coffeeshop}}</td>
+     <td>{{item.isthestoreopen}}</td>
+     <td>{{item.bitcoinadress}}</td>
+
+     {% endfor %}
+  {% endblock %}
+</div>
+<form  action="#" method="post">
+
+<div class="add"
+   <caption>add,update:</caption>
+   <h2>managername:</h2>
+   <input type="text" placeholder="" name="managername" >
+   <h1>managerpassword:</h1>
+   <input type="password" placeholder="" name="managerpassword" >
+  <h1>managercoffeshop:</h1>
+    <input type="text" placeholder="" name="managercoffee" >
+    <br>
+  <h1>manager bitcoin address:</h1>
+      <input type="text" placeholder="" name="bitcoinaddress" >
+      <br>
+    <button type="submit" name="add" value="add">Add</button>
+    <br>
+    <br>
+    <input type="text" placeholder="" name="deleteuser">
+    <br>
+    <br>
+    <button type="submit" name="remove" value="remove">Remove</button>
+  </table>
+</div>
+</form>
+
+
+
+
+
+
+
+  </body>
+</html>

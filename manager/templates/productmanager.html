@@ -1,0 +1,97 @@
+
+{% extends "basepage.html" %}
+{% set active_page = "managerpage/productss" %}
+
+{% block head %}
+   <link rel="stylesheet" type="text/css" href="{{url_for('.static',filename='styles/product.css')}}">
+{% endblock %}
+
+{% block content %}
+  <form  action="#" enctype="multipart/form-data" method="post">
+
+    <div class="product">
+
+        <caption>product:</caption>
+        <div class="col-sm-4">
+        <button type="submit" name="add" value="add" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</button>
+        <button type="submit" name="remove" value="remove" class="btn btn-primary"><i class="fa fa-remove"></i> remove</button>
+        <div class="update">
+
+        <button type="submit" name="update1" value="update1" class="btn btn-info"  > update quantity</button>
+        <button type="submit" name="update2" value="update2" class="btn btn-info" > update expiring date</button>
+        <button type="submit" name="update3" value="update2" class="btn btn-info"> update price</button>
+        <br>
+      </div>
+
+
+
+
+
+      </div>
+        <div class="add">
+           <h3>product name:</h3>
+           <input type="text" placeholder="" name="productname" >
+           <h3>product finish time:</h3>
+           <input type="text" placeholder="" name="productfinishtime" >
+           <h3>product quantity:</h3>
+           <input type="text" placeholder="" name="productquantity" >
+           <h3>product price:</h3>
+           <input type="text" placeholder="" name="productprice" >
+           <h3>product instruction:</h3>
+           <input type="text" placeholder="" name="instruction" >
+           <h3>product catageory:</h3>
+           <select id="productcatageory" name="productcatageory">
+               <option value="hotdrinks">Hot drinks</option>
+               <option value="colddrinks">Cold drinks</option>
+               <option value="sweetdesserts">Sweet desserts</option>
+               <option value="saltydesserts">Salty desserts</option>
+          </select>
+
+           <h3>product photo:</h3>
+           <input type="file" placeholder="" name="pic" >
+          <h3>product expiring date:</h3>
+            <input type="date"  name="productexpiringdate"
+             value="2020-07-22"
+              min="2020-01-01" max="2025-05-05">
+            <br>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+      </div>
+
+      <table border="1" cellspacing="0" width="600px"  class="table table-bordered">
+        <tbody>
+
+          {% for item in value %}
+          {% if loop.index%3 == 0 %}
+            {% endif %}
+
+          <td> <image src ={{url_for('.static',filename='img/productsimages/'+item.imagename)}}
+ class="img-thumbnail" class="img-rounded" style="max-height:100px;max-width:150px">
+ <br><p>name:{{item.name}}<br>
+   quantity:{{item.quantity}}<br>
+   catageory:{{item.catageory}}<br>
+   price:{{item.price}}$<br>
+   finish time:{{item.finishtime}} min<br>
+   expiringdate:[{{item.expitingdate}}]</p></td>
+ {% if loop.index%3 == 0 %}
+
+ <tr>
+
+   </tr>
+   {% endif %}
+
+            {% endfor %}
+
+</tbody>
+</table>
+
+
+
+    </div>
+
+  </form>
+  {% endblock %}

@@ -1,0 +1,42 @@
+{% extends "indexx.html" %}
+{% block content %}
+<form action="#" method="post" class="contact100-form validate-form">
+  <p>The avalible coffee-shops are:</p>
+
+  <span class="contact100-form-title">
+    Pick a coffee-shop!
+  </span>
+{% for item in value %}
+<label>
+<input type="radio" name="radio" value={{item.id}}>{{item.coffeeshop}}
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+The rating: &nbsp;
+{% if (item.onestar+item.twostar+item.threestar+item.fourstar+item.fivestar)!= 0 %}
+{{(item.onestar*1+item.twostar*2+item.threestar*3+item.fourstar*4+item.fivestar*5)/(item.onestar+item.twostar+item.threestar+item.fourstar+item.fivestar)}}
+{% else %}
+notrated
+{% endif %}
+&nbsp;/&nbsp;5
+<div class="control__indicator"></div>
+</label>
+<br>
+{% endfor %}
+<p>{{message}}</p>
+<div class="container-contact100-form-btn">
+  <div class="wrap-contact100-form-btn">
+    <div class="contact100-form-bgbtn"></div>
+    <button type="submit" class="contact100-form-btn">
+      <span>
+        Submit
+        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+
+      </span>
+    </button>
+  </div>
+</div>
+
+</form>
+{% endblock %}

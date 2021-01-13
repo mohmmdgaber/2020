@@ -1,0 +1,124 @@
+{% extends "basepage.html" %}
+{% set active_page = "/managerpage" %}
+{% block head %}
+<style>
+
+.large_font{
+	font-size: 18pt;
+  font-weight: bold;
+  text-decoration: underline;
+
+
+}
+
+.small_font{
+	font-size: 12pt;
+  }
+
+</style>
+{% endblock %}
+{% block content %}
+<br>
+<span class="large_font">
+Latest state of the coffee shop({{manager.coffeeshop}}):
+</span>
+<span class="small_font">
+ {{ manager.lateststate}}
+</span>
+<br>
+<br>
+<h1>workers details :</h1>
+<br>
+<table border="4" width="50%" cellspacing="0" class="table table-hover">
+    <thead>
+        <tr height="60px" >
+          <th scope="col">#</th>
+            <th scope="col">Worker name</th>
+            <th scope="col">Worker hours</th>
+            <th scope="col">worker days</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for item in value %}
+        <tr height="50px">
+           <th scope="row">{{loop.index}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.starthour}}:00-{{item.endhour}}:00</td>
+            <td> {{days[item.startday]}} to {{days[item.endday]}} </td>
+            </tr>
+          {% endfor %}
+
+    </tbody>
+</table>
+<h1>reports :</h1>
+<br>
+<table  border="1"cellspacing="0" width="50%">
+      <tr height= "100px">
+        <td><h5>Sales: {{sales}}</h5>
+             <br>
+             <h5>Revenue: {{revenue}}</h5>
+           </td>
+
+      </tr>
+<form action="#" method="post">
+
+
+</table>
+<br>
+<h3>working hours:</h3>
+<p>
+<table  border="1"cellspacing="0" width="50%">
+  <tr height= "100px">
+
+  from:
+<select id="starthour" name="starthour">
+{% for i in range(0,24) %}
+<option value="{{i}}">{{i}}:00</option>
+{% endfor %}
+
+</select>
+
+to:
+<select id="endhour" name="endhour">
+{% for i in range(0,24) %}
+<option value="{{i}}">{{i}}:00</option>
+{% endfor %}
+
+</select>
+</p>
+
+<h3>working days:</h3>
+<p>
+from:
+<select id="startday" name="startday">
+{% for i in days %}
+<option value="{{loop.index-1}}">{{i}}</option>
+{% endfor %}
+
+</select>
+
+to:
+<select id="endday" name="endday">
+{% for i in days %}
+<option value="{{loop.index-1}}">{{i}}</option>
+{% endfor %}
+
+
+</select>
+</p>
+</tr>
+</table>
+
+<p>The opening and closing hours are :{{manager.starthour}}:00-{{manager.endhour}}:00</p>
+<p>The opending and closing days are : {{days[manager.startday]}} to {{days[manager.endday]}} </p>
+<button type="submit" name="add" value="add"class="btn btn-info add-new"><i class="fa fa-plus"></i>Update</button>
+<br>
+<span class="large_font">
+The bitcoin public key:
+</span>
+<span class="small_font">
+ {{ manager.bitcoinadress}}
+</span>
+</form>
+
+{% endblock %}

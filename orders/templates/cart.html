@@ -1,0 +1,48 @@
+
+{% extends "indexx.html" %}
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{{url_for('.static',filename='styles/cart.css')}}">
+
+{% endblock %}
+
+{% block content %}
+  <body>
+  <form class="contact100-form validate-form" action="#" method="post">
+
+    <div class="product">
+
+
+      <section id="content">
+            <details class="shoppingCart">
+               <summary>
+                  <h4>Shopping cart</h4>
+                  <span class="arrow"></span>
+               </summary>
+               <ul>
+                 {% for item in value %}
+                  <li>
+                     <span>{{item.quantity}}x <a href="javascript:void(0);">{{item.name}}</a></span> <strong>${{item.quantity*item.price}}</strong>
+                  </li>
+                  {%  endfor %}
+               </ul>
+               <p>
+                  <span>Products: <strong>{{order.sales}}</strong></span> <span>Total: <strong>${{order.fullprice}}</strong>  &nbsp;&nbsp; Discount: <strong>${{order.discount}} </strong></span>
+
+               </p>
+               <button class="checkout" name="checkout" value="checkout" type="submit" <!-- href="javascript:void(0);-->">Checkout</button>
+            </details>
+
+            <div class="custom-search">
+              <input type="text" name="coupon" class="custom-search-input" placeholder="Enter a coupon">
+              <button class="custom-search-botton" name="check" value="check" type="submit">Check</button>
+            </div>
+            <p>{{message}}</p>
+      </section>
+
+    </div>
+  </form>
+
+  </body>
+{% endblock %}

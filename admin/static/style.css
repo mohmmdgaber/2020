@@ -1,0 +1,21 @@
+caption{
+  text-align: left;
+}
+caption{
+  color: red
+}
+body{
+background-color:lightcyan
+}
+input{
+  text-align: right;
+}
+.add{
+  position: absolute;
+  top: 10;
+  right:50px;
+}
+table{
+
+   margin-right=50px;
+}
